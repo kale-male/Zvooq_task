@@ -4,7 +4,7 @@ It was needed to use Flask & SQLAlchemy.
 
 There are three classes in my lab: Students, Subjects and Journal (description in model.py). We create a schema of database by the classes structure.   
 
-Class Students: 
+Class Students:  
 id - attribute of class (and table field)  
 name - attribute of class (and table field)  
 surname - attribute of class (and table field)  
