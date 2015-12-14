@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<title>Students</title>
+    </head>
+  <body>
+	<nav class="navbar navbar-default">
+	   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+		<li class="active"><a href="/">Студенты </a></li>
+		<li><a href="/journal">Журнал</a></li>
+		<li><a href="/statistics">Статистика</a></li>
+	      </ul>
+	  </div>
+	</nav>
+
+	<form class="form-group" action="/" method="post">
+		<div class="form-group">
+		  <label for="name">Введите имя студента:</label>
+		  <input type="text" class="form-control" placeholder="Иван" id="name" name="name">
+		</div>
+		<div class="form-group">
+		  <label for="surname">Введите фамилию студента:</label>
+		  <input type="text" class="form-control" placeholder="Петров" id="surname" name="surname">
+		</div>
+		<button type="submit" class="btn btn-default">Добавить студента</button>
+	</form>
+<br>
+	<table class = "table">
+		<tr>
+			<th>Student name</th>
+			<th>Student surname</th>
+		</tr>
+	{% for stud in students %}
+		<tr>
+			<td>{{stud.name}}</td>
+			<td>{{stud.surname}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+	<script 
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+	</script>
+  </body>
+</html>

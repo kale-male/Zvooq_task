@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<title>Statistics</title>
+    </head>
+  <body>
+	<nav class="navbar navbar-default">
+	   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+		<li><a href="/">Студенты </a></li>
+		<li><a href="/journal">Журнал</a></li>
+		<li class="active"><a href="/statistics">Статистика</a></li>
+	      </ul>
+	  </div>
+	</nav>
+
+<br>
+	<label for="studentselect">Средний балл у студента:</label>
+	<form class="form-inline" action="/statistics" method="post">
+	  <div class="form-group">	    
+		<select onchange="this.form.submit()" class = "form-control" id = "studentselect" name="student">
+		{% for st in students %}
+		<option {{"selected" if st.id == studid}} value = "{{st.id}}">{{st.name}} {{st.surname}}</option>
+		{% endfor %}
+		</select>
+<label for="studentselect">{{studavg}}</label>
+	  </div>
+	
+<br>
+<br>
+	<label for="subjectselect">Средний балл по предмету:</label>
+<br>
+	  <div class="form-group">
+		<select onchange="this.form.submit()" class = "form-control" id = "subjectselect" name="subject">
+		{% for sub in subjects %}
+		<option {{"selected" if sub.id == subjid}} value = "{{sub.id}}">{{sub.subjname}}</option>
+		{% endfor %}
+		</select>
+<label for="subjectselect" class="bg-success">{{subjavg}}</label>
+	</div>
+	</form>
+<br>
+  </body>
+</html>
